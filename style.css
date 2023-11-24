@@ -90,7 +90,7 @@ img {
 	width: 200px;
 	height: 200px;
 	top: 0;
-	left: 29%;
+	left: 30%;
 	position: absolute;
 	background: rgba(0,0,0,0.6);
 	display: flex;
@@ -340,5 +340,4 @@ a {
 
  ul li ul li a { transition: all 0.5s ease; }
 */
-
 
