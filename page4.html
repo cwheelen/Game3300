@@ -6,7 +6,6 @@
     <title></title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./page4.css">
-	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="topnav">
@@ -133,12 +132,10 @@
 	</div>
 
     <script>
-		function updateColor()
-		{
+		function updateColor() {
 			const sortByOptions = document.getElementById('sortByOptions');
 			const selectedOption = sortByOptions.options[sortByOptions.selectedIndex];
 			const borderValue = selectedOption.value === "" ? "" : "3px solid #ec9b87";
-
 			sortByOptions.style.border = borderValue;
 		}        
 
