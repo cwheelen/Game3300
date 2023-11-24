@@ -1,37 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./page2.css">
+	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="topnav">
-		<a href="./index.html">Main Page</a>
-		<a href="./page2.html">Your Recipes</a>
-		<a href="./page3.html">Upload Recipe</a>
-		<a href="./page4.html">Top Recipes</a>
-		<div class="topnav-right">
-			<form>
-		    <input type="search" placeholder="Search" aria-label="Search">
-			</form>
+    <div class="topnav">
+        <a href="./index.html">Main Page</a>
+        <a href="./page2.html">Your Recipes</a>
+        <a href="./page3.html">Upload Recipe</a>
+        <a href="./page4.html">Top Recipes</a>
+        <div class="topnav-right">
+            <form>
+                <input type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </div>
+
+    <p style="text-align: center; font-size: 35px;">Recipes</p>
+    <form class="main-form" action="">
+        <input type="text" id="searchBox" name="searchBox" placeholder="Search Recipes">
+        <input type="button" id="searchButton" class="filterButton" value="Filter" onclick="openPopup()">
+		<select name="sortByOptions" id="sortByOptions" onchange="updateColor()">
+			<option value="" disabled selected>Sort By</option>
+			<option value="heartsToday">Sort By: Hearts Today</option>
+			<option value="heartsThisWeek">Sort By: Hearts This Week</option>
+			<option value="heartsThisMonth">Sort By: Hearts This Month</option>
+			<option value="heartsThisYear">Sort By: Hearts This Year</option>
+			<option value="heartsAllTime">Sort By: Hearts All Time</option>
+			<option value="alphabetical">Sort By: Alphabetical</option>
+			<option value="new">Sort By: New</option>
+			<option value="old">Sort By: Old</option>
+		</select>
+    </form>
+
+	<div class="overlay" id="overlay">
+		<div class="popup">
+			<p style="text-align: center; font-size: 20px; color: black; ">Filters</p>
+			<div class="checkbox-container">
+				<input type="checkbox" class="filterOption" id="vegan"> 
+				<label for="vegan" onclick="toggleBackground('vegan')">Vegan</label>
+				<input type="checkbox" class="filterOption" id="halal"> 
+				<label for="halal" onclick="toggleBackground('halal')">Halal</label>
+				<input type="checkbox" class="filterOption" id="kosher">
+				<label for="kosher" onclick="toggleBackground('kosher')">Kosher</label>
+				<input type="checkbox" class="filterOption" id="vegetarian"> 
+				<label for="vegetarian" onclick="toggleBackground('vegetarian')">Vegetarian</label>
+				<input type="checkbox" class="filterOption" id="keto"> 
+				<label for="keto" onclick="toggleBackground('keto')">Keto</label>
+				<input type="checkbox" class="filterOption" id="glutenFree"> 
+				<label for="glutenFree" onclick="toggleBackground('glutenFree')">Gluten Free</label>
+				<input type="checkbox" class="filterOption" id="lactoseFree"> 
+				<label for="lactoseFree" onclick="toggleBackground('lactoseFree')">Lactose Free</label>
+			</div>
+			<br>
+			<div style="text-align: center; ">
+				<select name="includesOption" id="includesOption" style="margin-right: 125px;" onchange="handleDropdownChange('includesOption')" >
+					<option value="" disabled selected>Includes</option>
+					<option value="egg">Egg</option>
+					<option value="milk">Milk</option>
+					<option value="rice">Rice</option>
+					<option value="beef">Beef</option>
+					<option value="cabbage">Cabbage</option>
+					<option value="pork">Pork</option>
+					<option value="cheese">Cheese</option>
+				</select>
+				
+				<select name="excludesOption" id="excludesOption" onchange="handleDropdownChange('excludesOption')">
+					<option value="" disabled selected>Excludes</option>
+					<option value="egg">Egg</option>
+					<option value="milk">Milk</option>
+					<option value="rice">Rice</option>
+					<option value="beef">Beef</option>
+					<option value="cabbage">Cabbage</option>
+					<option value="pork">Pork</option>
+					<option value="cheese">Cheese</option>
+				</select>
+			</div>
+			<div class="options"></div>
+			<br>
+			<div style="text-align: center;">
+				<button class="closeButton" onclick="closePopup()">Done</button>
+			</div>
 		</div>
 	</div>
 
-	<p style="text-align: center; justify-content: center;">This is where you would find your recipes!</p>
-
-	<form class="main-form" action="">
-	    <input type="text" id="searchBox" name="searchBox" placeholder="Search Recipes">
-	    
-	    <input type="submit" id="searchButton" value="Search">
-	    
-	    <!--<button type="submit"><i class="fa fa-search"></i></button>-->
-	</form>
-
-
-
-
+	<img class="stkimg" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
 	
+
+    <script>
+		function updateColor()
+		{
+			const sortByOptions = document.getElementById('sortByOptions');
+			const selectedOption = sortByOptions.options[sortByOptions.selectedIndex];
+			const borderValue = selectedOption.value === "" ? "" : "3px solid #ec9b87";
+
+			sortByOptions.style.border = borderValue;
+		}        
+
+		function openPopup() {
+            document.getElementById('overlay').style.display = 'flex';
+            console.log("Filter button is clicked");
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+		function toggleBackground(id) {
+            var label = document.querySelector('label[for=' + id + ']');
+            label.classList.toggle('selected');
+        }
+
+		function handleDropdownChange(dropdownId) {
+			const dropdown = document.getElementById(dropdownId);
+			const selectedOption = dropdown.options[dropdown.selectedIndex].text;
+
+			// create a new <p> element
+			const newParagraph = document.createElement('p');
+			newParagraph.textContent = `${selectedOption}`;
+			newParagraph.style.color = 'black';
+			newParagraph.style.backgroundColor = '#ec9b87';
+			newParagraph.style.borderRadius = '25px';
+			newParagraph.style.width = '90px';
+			newParagraph.style.marginRight = '10px'; 
+			newParagraph.style.padding = '5px';
+			newParagraph.style.textAlign = 'center';
+
+			// append the <p> element to the popup
+			const chosenOptions = document.querySelector('.options');
+			chosenOptions.appendChild(newParagraph);
+
+			chosenOptions.style.display = 'flex';
+			chosenOptions.style.flexDirection = 'row';
+		}
+    </script>
 </body>
 </html>
