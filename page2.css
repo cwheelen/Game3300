@@ -1,1 +1,49 @@
+.circle {
+    width: 250px;
+    height: 250px;
+    background-color: #3498db; /* Circle color */
+    border-radius: 50%;
+    border: 5px solid #fbe6e6; /* Pink border */
+    position: relative;
+    top: -125px; /* Adjust this value based on your design */
+    margin-right: 20px;
+    z-index: 1;
+}
 
+.user-info {
+    flex-grow: 1;
+}
+
+.likes {
+    width: 18px;
+    height: 18px;
+    background-color: #ec9b87;
+    transform: rotate(-45deg);
+    margin: 0px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.likes::before,
+.likes::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #ec9b87;
+    border-radius: 50%;
+}
+
+.likes::before {
+    top: -9px;
+    left: 0;
+}
+
+.likes::after {
+    top: 0;
+    left: 9px;
+}

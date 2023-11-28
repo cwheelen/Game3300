@@ -6,6 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./page2.css">
+    <link rel="stylesheet" href="./page4.css">
 </head>
 <body>
     <div class="topnav">
@@ -19,6 +20,85 @@
             </form>
         </div>
     </div>
-	<p>look at your recipes here</p>
+
+    <img src="profile_banner_stock.png" width="100%">
+
+    <div style="display: flex; align-items: center; margin-left: 50px;">
+        <div style="display: flex; align-items: center;">
+            <div class="circle"></div>
+            <div style="margin-left: 20px; flex-grow: 1;">
+                <div class="user-info" style="display: flex; align-items: center;">
+                    <h2 style="margin-right: 20px; margin-top: -70px;">Username</h2>
+                    <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px" style="margin-top: -70px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-top: -25px;">
+                    <div class="likes" style="margin-left: 10px;"></div>
+                    <div style="margin-right: 5px;">44</div><!-- Number next to the first likes -->
+                    <div class="likes" style="margin-left: 20px;"></div>
+                    <div style="margin-right: 5px;">625</div><!-- Number next to the second likes -->
+                </div>
+                <p>Welcome to my cook page!</p>
+            </div>
+        </div>
+    </div>
+    
+    <h1>Upload Recipes</h1>
+        
+    <div style="margin-left: 67.5%;">
+        <select name="sortByOptions" id="sortByOptions" onchange="updateColor()">
+            <option value="" disabled selected>Sort By</option>
+            <option value="alphabeticallyAscending">Sort By: Alphabetically (A-Z)</option>
+            <option value="alphabeticallyDesending">Sort By: Alphabetically (Z-A)</option>
+            <option value="hearts">Sort By: Hearts</option>
+            <option value="uploadEarliest">Sort By: Upload Date (Earliest-Lastest)</option>
+            <option value="uploadLastest">Sort By: Upload Date (Lastest-Earliest)</option>
+        </select>
+    </div>
+
+	<a href="braised_salmon_recipe.html" class="recipe-link">
+        <div class="recipe">
+            <img class="recipeImage" src="food_stock_image2_cropped.jpg" width="200px" height="200px">
+            <div class="recipeDetails">
+                <p>Braised Salmon and Roasted Veggies</p>
+                <br>
+                <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px">
+                <p>Uploaded by Cooking Together</p>
+            </div>
+            <div class="heart">
+                <div class="heart-content">284</div>
+            </div>
+        </div>
+    </a>
+    
+    <a href="pesto_pizza_recipe.html" class="recipe-link">
+        <div class="recipe">
+            <img class="recipeImage" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
+            <div class="recipeDetails">
+                <p>Thin Crust Pesto Pizza</p>
+                <br>
+                <img class="recipeFlag" src="Flag_of_Canada_(Pantone).png" width="75px" height="40px">
+                <p>Uploaded by Cooking Together</p>
+            </div>
+            <div class="heart">
+                <div class="heart-content">147</div>
+            </div>
+        </div>
+    </a>
+    
+    <a href="marinated_steak_recipe.html" class="recipe-link">
+        <div class="recipe">
+            <img class="recipeImage" src="food_stock_image3_cropped.jpg" width="200px" height="200px">
+            <div class="recipeDetails">
+                <p>Marinated Steak with Sauteed Asparagus</p>
+                <br>
+                <img class="recipeFlag" src="Flag_of_Vietnam.png" width="75px" height="40px">
+                <p>Uploaded by Cooking Together</p>
+            </div>
+            <div class="heart">
+                <div class="heart-content">63</div>
+            </div>
+        </div>
+    </a>
+    
 </body>
 </html>
