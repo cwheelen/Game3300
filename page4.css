@@ -141,3 +141,8 @@
     transform: rotate(45deg) translate(0, -10px);
     font-size: 20px;
 }
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default color of the parent element */
+}
