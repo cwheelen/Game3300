@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./page2.css">
     <link rel="stylesheet" href="./page4.css">
+    <script src="Script.js"></script>
 </head>
 <body>
     <div class="topnav">
@@ -32,10 +33,10 @@
                     <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px" style="margin-top: -70px;">
                 </div>
                 <div style="display: flex; align-items: center; margin-top: -25px;">
-                    <img src="hollow_heart_icon.png " style="width: 40px; height: 40px;">
-                    <div style="margin-right: 550px;">44</div>
-                    <img src="upload_icon.png" style="width: 60px; height: 60px; margin-left: -400px;">
-                    <div>625</div>
+                    <div class="likes" style="margin-left: 10px;"></div>
+                    <div style="margin-right: 5px;">44</div><!-- Number next to the first likes -->
+                    <div class="likes" style="margin-left: 20px;"></div>
+                    <div style="margin-right: 5px;">625</div><!-- Number next to the second likes -->
                 </div>
                 <p>Welcome to my cook page!</p>
             </div>
@@ -55,50 +56,46 @@
         </select>
     </div>
 
-	<a href="braised_salmon_recipe.html" class="recipe-link">
-        <div class="recipe">
-            <img class="recipeImage" src="food_stock_image2_cropped.jpg" width="200px" height="200px">
-            <div class="recipeDetails">
-                <p>Braised Salmon and Roasted Veggies</p>
-                <br>
-                <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px">
-                <p>Uploaded by Cooking Together</p>
-            </div>
-            <div class="heart">
-                <div class="heart-content">284</div>
-            </div>
+	
+    <div class="recipe">
+        <img class="recipeImage" src="food_stock_image2_cropped.jpg" width="200px" height="200px">
+        <div class="recipeDetails">
+            <p>Braised Salmon and Roasted Veggies</p>
+            <br>
+            <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px">
+            <p>Uploaded by Cooking Together</p>
         </div>
-    </a>
-    
-    <a href="pesto_pizza_recipe.html" class="recipe-link">
-        <div class="recipe">
-            <img class="recipeImage" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
-            <div class="recipeDetails">
-                <p>Thin Crust Pesto Pizza</p>
-                <br>
-                <img class="recipeFlag" src="Flag_of_Canada_(Pantone).png" width="75px" height="40px">
-                <p>Uploaded by Cooking Together</p>
-            </div>
-            <div class="heart">
-                <div class="heart-content">147</div>
-            </div>
+        <div class="heart" onclick="hearts('salmon')">
+            <div class="heart-content" id="hNum">284</div>
         </div>
-    </a>
-    
-    <a href="marinated_steak_recipe.html" class="recipe-link">
-        <div class="recipe">
-            <img class="recipeImage" src="food_stock_image3_cropped.jpg" width="200px" height="200px">
-            <div class="recipeDetails">
-                <p>Marinated Steak with Sauteed Asparagus</p>
-                <br>
-                <img class="recipeFlag" src="Flag_of_Vietnam.png" width="75px" height="40px">
-                <p>Uploaded by Cooking Together</p>
-            </div>
-            <div class="heart">
-                <div class="heart-content">63</div>
-            </div>
+    </div>
+
+
+    <div class="recipe">
+        <img class="recipeImage" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
+        <div class="recipeDetails">
+            <p>Thin Crust Pesto Pizza</p>
+            <br>
+            <img class="recipeFlag" src="Flag_of_Canada_(Pantone).png" width="75px" height="40px">
+            <p>Uploaded by Cooking Together</p>
         </div>
-    </a>
+        <div class="heart" onclick="hearts('pizza')">
+            <div class="heart-content" id="hNum1">147</div>
+        </div>
+    </div>
+
+    <div class="recipe">
+        <img class="recipeImage" src="food_stock_image3_cropped.jpg" width="200px" height="200px">
+        <div class="recipeDetails">
+            <p>Marinated Steak with Sauteed Asparagus</p>
+            <br>
+            <img class="recipeFlag" src="Flag_of_Vietnam.png" width="75px" height="40px">
+            <p>Uploaded by Cooking Together</p>
+        </div>
+        <div class="heart" onclick="hearts('steak')">
+            <div class="heart-content" id="hNum2">63</div>
+        </div>
+    </div>
     
 </body>
 </html>
