@@ -231,6 +231,132 @@ form.main-form {
   } // end form
 
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-item-right {
+  display: inline;
+  float: right;
+  width: 50%;
+  height: 250px;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  border-color: #f89983;
+  justify-content: center;
+  margin-right: 4em;
+}
+
+li.ing {
+  height: 25px;
+  padding: 5px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #f89983;
+  list-style-type: none;
+  background-color: #ffe6e6;
+  margin: 3px;
+}
+
+li#ing-d {
+  width: 60%;
+}
+
+.grid-item-left {
+  padding-top: 50px;
+  text-align: center;
+  display: inline;
+  
+  width: 50%;
+  height: 250px;
+  .graybox {
+    height: 250px;
+    width: 350px;
+    background-color: lightgray;
+    padding-left: 30px;
+    margin-left: 80px;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center; 
+    text-align: center;   
+  }
+}
+
+
+
+.whitebox {
+  justify-content: center;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  position: absolute;
+  margin-left: 8em;
+
+}
+
+p.upload {
+  position: relative;
+  padding-top: 60%;
+  padding-left: 15%;
+}
+
+.tags-container {
+  float: initial;
+  width: 90%;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  border-color: #f89983;
+  justify-content: center;
+  margin-left: 5em;
+  align-items: center;
+  .tags {
+    display: inline-flex;
+    list-style-type: none;
+    align-items: center;
+    margin-left: 15em;
+  }
+}
+
+li.tag {
+  background-color: #ffe6e6;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  border-color: #f89983;
+  justify-content: center;
+  padding: 5px;
+  margin: 20px;
+}
+
+.description {
+  float: initial;
+  width: 90%;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  border-color: #f89983;
+  justify-content: center;
+  margin-left: 5em;
+}
+
+.txt {
+  display: block;
+  width: 95%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+    
+}
+    
 	
 
 
