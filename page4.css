@@ -79,6 +79,7 @@
 .recipe {
     display: flex;
     align-items: center;
+    padding-bottom: 40px;
 }
 .recipeImage {
     margin-left: 200px; 
