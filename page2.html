@@ -47,7 +47,7 @@
     <h1>Upload Recipes</h1>
         
     <div style="margin-left: 67.5%;">
-        <select name="sortByOptions" id="sortByOptions" onchange="updateColor()">
+        <select name="sortByOptions" id="sortByOptions" onchange="updateSortBy()">
             <option value="" disabled selected>Sort By</option>
             <option value="alphabeticallyAscending">Sort By: Alphabetically (A-Z)</option>
             <option value="alphabeticallyDesending">Sort By: Alphabetically (Z-A)</option>
@@ -94,6 +94,19 @@
             <p>Uploaded by Cooking Together</p>
         </div>
         <div class="heart" onclick="hearts('steak')">
+            <div class="heart-content" id="hNum2">63</div>
+        </div>
+    </div>
+
+    <div class="recipe">
+        <img class="recipeImage" src="purple_yam_pudding.png" width="200px" height="200px">
+        <div class="recipeDetails">
+            <a href="pudding.html" style="font-size: 24px;">Purple Yam Pudding</a>
+            <br>
+            <img class="recipeFlag" src="Flag_of_Vietnam.png" width="75px" height="40px">
+            <p>Uploaded by Cooking Together</p>
+        </div>
+        <div class="heart" onclick="hearts('pudding')">
             <div class="heart-content" id="hNum2">63</div>
         </div>
     </div>

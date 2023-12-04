@@ -28,7 +28,29 @@ function hearts(h) {
 	} else {
 		console.log("this is not supposed to happen.")
 	}
-	
-
 }
+
+function updateSortBy() {
+	var sortByOptions = document.getElementById('sortByOptions');
+	var selectedOption = sortByOptions.value;
+
+	if (selectedOption === 'alphabeticallyAscending') {
+		console.log("hello");
+		console.log(selectedOption);
+		sortRecipesAlphabetically(true);
+	} else if (selectedOption === 'alphabeticallyDesending') {
+		sortRecipesAlphabetically(false);
+	} else if (selectedOption === 'hearts') {
+
+	} else if (selectedOption === 'uploadEarliest'){
+
+	} else if (selectedOption === 'uploadLastest'){
+
+	}
+}
+
+function sortRecipesAlphabetically(){
+	
+}
+	
 
