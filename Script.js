@@ -24,7 +24,7 @@ function hearts(h) {
 
 		number++;
 
-		document.getElementById("hNum3").innerHTML = number;
+		document.getElementById("hNum2").innerHTML = number;
 	} else if (h == "pudding") {
 		hNum3 = document.getElementById("hNum3");
 		number = hNum3.innerHTML;
@@ -32,7 +32,7 @@ function hearts(h) {
 
 		number++;
 
-		document.getElementById("hNum4").innerHTML = number;
+		document.getElementById("hNum3").innerHTML = number;
 	} else if (h == "sweet_rice") {
 		hNum4 = document.getElementById("hNum4");
 		number = hNum4.innerHTML;
