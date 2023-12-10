@@ -28,3 +28,9 @@
 	text-align: center;
     display: inline-block;
 }
+
+.recipeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -93,21 +93,47 @@ function updateSortBy() {
 
 	if (selectedOption === 'alphabeticallyAscending') {
 		console.log("hello");
-		console.log(selectedOption);
 		sortRecipesAlphabetically(true);
 	} else if (selectedOption === 'alphabeticallyDesending') {
+		console.log(selectedOption);
 		sortRecipesAlphabetically(false);
 	} else if (selectedOption === 'hearts') {
+		sortRecipesByHearts();
+	} 
+	
+}
 
-	} else if (selectedOption === 'uploadEarliest'){
+function sortRecipesAlphabetically(ascending){
+	var recipesContainer = document.getElementById("recipesContainer"); 
+	var recipes = Array.from(recipesContainer.children);
+	var sortedRecipes = recipes.sort(function (a, b) {
+		var titleA = a.querySelector(".recipeDetails a").innerText.toLowerCase();
+		var titleB = b.querySelector(".recipeDetails a").innerText.toLowerCase();
 
-	} else if (selectedOption === 'uploadLastest'){
-
+		if (ascending) {
+			return titleA.localeCompare(titleB);
+		} else {
+			return titleB.localeCompare(titleA);
+		}
+	});
+	recipesContainer.innerHTML = "";
+	for (var i = 0; i < sortedRecipes.length; i++) {
+		recipesContainer.appendChild(sortedRecipes[i]);
 	}
 }
 
-function sortRecipesAlphabetically(){
-	
-}
-	
+function sortRecipesByHearts() {
+	var recipesContainer = document.getElementById("recipesContainer");
+	var recipes = Array.from(recipesContainer.children);
+	var sortedRecipes = recipes.sort(function (a, b) {
+		var heartsA = parseInt(a.querySelector(".heart-content").innerText);
+		var heartsB = parseInt(b.querySelector(".heart-content").innerText);
+
+		return heartsB - heartsA;
+	});
+	recipesContainer.innerHTML = "";
+	for (var i = 0; i < sortedRecipes.length; i++) {
+		recipesContainer.appendChild(sortedRecipes[i]);
+	}
+}	
 

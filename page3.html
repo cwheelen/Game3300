@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href="./page3.css">
+	<link rel="stylesheet" href="./page4.css">
+    <link rel="stylesheet" href="./page3.css">
     <link rel="stylesheet" href="https://use.typekit.net/glz2pcp.css">
     <script src="Script.js"></script>
 </head>
@@ -19,8 +20,6 @@
     <h1>Upload A New Recipe</h1>
     <form class="main-form" action="">
         <input type="text" id="searchBox" name="searchBox" placeholder="Enter a Descriptive Recipe title here!">
-                
-        <!--<button type="submit"><i class="fa fa-search"></i></button>-->
     </form>
     <div class="grid1">
         <div class="grid-item-left">
@@ -35,44 +34,54 @@
 
         <div class="grid-item-right">
             <h3>Ingredients</h3>
-            <!-- <li class="ing">Eggs    x2</li>
+            <li class="ing">Eggs    x2</li>
             <li class="ing">Flour   x3</li>
-            <li class="ing">Milk    x1</li> -->
-            <li class="ing" id="ing-d">Add Ingredient</li>
+            <li class="ing">Milk    x1</li>
+            <li class="ing">Add Ingredient</li>
             <!-- <button>Add Ingredient</button> -->
         </div>
     </div>
-
     <div class="tags-container">
-        <h2>Tags</h2>
-        <div class="tags">
-            <li class="tag">Vegan</li> 
-            <li class="tag">Halal</li>
-            <li class="tag">Kosher</li>
-            <li class="tag">Vegetarian</li>
-            <li class="tag">Keto</li>
-            <li class="tag">Gluten Free</li>
-            <li class="tag">Lactose Free</li>
+        <h2>Filters</h2>
+        <div class="checkbox-container">
+            <input type="checkbox" class="filterOption" id="vegan"> 
+            <label for="vegan" onclick="toggleBackground('vegan')">Vegan</label>
+            <input type="checkbox" class="filterOption" id="halal"> 
+            <label for="halal" onclick="toggleBackground('halal')">Halal</label>
+            <input type="checkbox" class="filterOption" id="kosher">
+            <label for="kosher" onclick="toggleBackground('kosher')">Kosher</label>
+            <input type="checkbox" class="filterOption" id="vegetarian"> 
+            <label for="vegetarian" onclick="toggleBackground('vegetarian')">Vegetarian</label>
+            <input type="checkbox" class="filterOption" id="keto"> 
+            <label for="keto" onclick="toggleBackground('keto')">Keto</label>
+            <input type="checkbox" class="filterOption" id="glutenFree"> 
+            <label for="glutenFree" onclick="toggleBackground('glutenFree')">Gluten Free</label>
+            <input type="checkbox" class="filterOption" id="lactoseFree"> 
+            <label for="lactoseFree" onclick="toggleBackground('lactoseFree')">Lactose Free</label>
         </div>
     </div>
-
     <br>
-
     <div class="description">
         <h2>Description</h2>
         <div>
             <textarea placeholder="Enter the recipe steps for making this dish" class="txt"></textarea>
         </div>
     </div>
-    <!-- 
-        header
-        search bar
-        on the left the click here to upload image
-        on the right the ingredients
-        tags
-        description
-    -->
-	<!-- <img  id="over" src="upload_v0.2_all.png" width="100%"> -->
+
+    <script>
+		function updateColor() {
+			const sortByOptions = document.getElementById('sortByOptions');
+			const selectedOption = sortByOptions.options[sortByOptions.selectedIndex];
+			const borderValue = selectedOption.value === "" ? "" : "3px solid #ec9b87";
+			sortByOptions.style.border = borderValue;
+		}        
+        function toggleBackground(id) {
+            var label = document.querySelector('label[for=' + id + ']');
+            label.classList.toggle('selected');
+        }
+
+</script>
+    
 </body>
 </html>
 

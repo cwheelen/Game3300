@@ -25,14 +25,14 @@
     </form>
 
 	<div style="margin-left: 67.5%;">
-		<select name="sortByOptions" id="sortByOptions" onchange="updateColor()">
+		<select name="sortByOptions" id="sortByOptions" onchange="updateColor(), updateSortBy()">
 			<option value="" disabled selected>Sort By</option>
 			<option value="heartsToday">Sort By: Hearts Today</option>
 			<option value="heartsThisWeek">Sort By: Hearts This Week</option>
 			<option value="heartsThisMonth">Sort By: Hearts This Month</option>
 			<option value="heartsThisYear">Sort By: Hearts This Year</option>
 			<option value="heartsAllTime">Sort By: Hearts All Time</option>
-			<option value="alphabetical">Sort By: Alphabetical</option>
+			<option value="alphabeticallyAscending">Sort By: Alphabetically (A-Z)</option>
 			<option value="new">Sort By: New</option>
 			<option value="old">Sort By: Old</option>
 		</select>
@@ -89,6 +89,20 @@
 		</div>
 	</div>
 
+	<div id="recipesContainer">
+	<div class="recipe">
+		<img class="recipeImage" src="kimchi_pancake.png" width="200px" height="200px">
+		<div class="recipeDetails">
+			<a href="kimchi_pancake.html" style="font-size: 24px;">Kimchi Pancake</a>
+			<br>
+			<img class="recipeFlag" src="south_korea_flag.png" width="75px" height="40px">
+			<p>Uploaded by <a href="./page2.html" style="text-decoration: underline;">Cooking Together</a></p>
+		</div>
+		<div class="heart" onclick="hearts('kimchi_pancake')">
+			<div class="heart-content" id="hNum7">289</div>
+		</div>
+	</div>
+
 	<div class="recipe">
         <a href="braised_salmon_recipe.html">
 			<img class="recipeImage" src="food_stock_image2_cropped.jpg" width="200px" height="200px">
@@ -104,50 +118,19 @@
         </div>
     </div>
 
-
-    <div class="recipe">
-		<a href="pesto_pizza_recipe.html">
-       		<img class="recipeImage" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
-		</a>
-        <div class="recipeDetails">
-            <a href="pesto_pizza_recipe.html" style="font-size: 24px;">Thin Crust Pesto Pizza</a>
-            <br>
-            <img class="recipeFlag" src="Flag_of_Canada_(Pantone).png" width="75px" height="40px">
-            <p>Uploaded by <a href="./page2.html" style="text-decoration: underline;">Cooking Together</a></p>
-        </div>
-        <div class="heart" onclick="hearts('pizza')">
-            <div class="heart-content" id="hNum1">147</div>
-        </div>
-    </div>
-
-    <div class="recipe">
-		<a href="marinated_steak_recipe.html">
-        	<img class="recipeImage" src="food_stock_image3_cropped.jpg" width="200px" height="200px">
-		</a>
-        <div class="recipeDetails">
-            <a href="marinated_steak_recipe.html" style="font-size: 24px;">Marinated Steak with Sauteed Asparagus</a>
-            <br>
-            <img class="recipeFlag" src="Flag_of_Vietnam.png" width="75px" height="40px">
-            <p>Uploaded by <a href="./page2.html" style="text-decoration: underline;">Cooking Together</a></p>
-        </div>
-        <div class="heart" onclick="hearts('steak')">
-            <div class="heart-content" id="hNum2">63</div>
-        </div>
-    </div>
-
 	<div class="recipe">
-        <img class="recipeImage" src="purple_yam_pudding.png" width="200px" height="200px">
+        <img class="recipeImage" src="vegetable_lentil_soup.png" width="200px" height="200px">
         <div class="recipeDetails">
-            <a href="pudding.html" style="font-size: 24px;">Purple Yam Pudding</a>
+            <a href="vegetable_lentil_soup.html" style="font-size: 24px;">Vegetable Lentil Soup</a>
             <br>
-            <img class="recipeFlag" src="south_korea_flag.png" width="75px" height="40px">
+            <img class="recipeFlag" src="Flag_of_the_United_States.png" width="75px" height="40px">
             <p>Uploaded by <a href="./page2.html" style="text-decoration: underline;">Cooking Together</a></p>
         </div>
-        <div class="heart" onclick="hearts('pudding')">
-            <div class="heart-content" id="hNum3">51</div>
+        <div class="heart" onclick="hearts('soup')">
+            <div class="heart-content" id="hNum6">222</div>
         </div>
     </div>
-
+	
 	<div class="recipe">
         <img class="recipeImage" src="sweet_rice_squares.png" width="200px" height="200px">
         <div class="recipeDetails">
@@ -160,6 +143,23 @@
             <div class="heart-content" id="hNum4">150</div>
         </div>
     </div>
+
+	<div class="recipe">
+		<a href="pesto_pizza_recipe.html">
+			<img class="recipeImage" src="food_stock_image1_cropped.jpg" width="200px" height="200px">
+		</a>
+		<div class="recipeDetails">
+			<a href="pesto_pizza_recipe.html" style="font-size: 24px;">Thin Crust Pesto Pizza</a>
+			<br>
+			<img class="recipeFlag" src="Flag_of_Canada_(Pantone).png" width="75px" height="40px">
+			<p>Uploaded by <a href="./page2.html" style="text-decoration: underline;">Cooking Together</a></p>
+		</div>
+		<div class="heart" onclick="hearts('pizza')">
+			<div class="heart-content" id="hNum1">147</div>
+		</div>
+	</div>
+
+	</div>
 
     <script>
 		function updateColor() {
