@@ -41,7 +41,48 @@ function hearts(h) {
 		number++;
 
 		document.getElementById("hNum4").innerHTML = number;
-	}else {
+	} else if (h == "smore") {
+		hNum5 = document.getElementById("hNum5");
+		number = hNum5.innerHTML;
+		console.log(number);
+
+		number++;
+
+		document.getElementById("hNum5").innerHTML = number;
+	} else if (h == "soup") {
+		hNum6 = document.getElementById("hNum6");
+		number = hNum6.innerHTML;
+		console.log(number);
+
+		number++;
+
+		document.getElementById("hNum6").innerHTML = number;
+	} else if (h == "kimchi_pancake") {
+		hNum7 = document.getElementById("hNum7");
+		number = hNum7.innerHTML;
+		console.log(number);
+
+		number++;
+
+		document.getElementById("hNum7").innerHTML = number;
+	} else if (h == "pie") {
+		hNum8 = document.getElementById("hNum8");
+		number = hNum8.innerHTML;
+		console.log(number);
+
+		number++;
+
+		document.getElementById("hNum8").innerHTML = number;
+	} else if (h == "pho") {
+		hNum9 = document.getElementById("hNum9");
+		number = hNum9.innerHTML;
+		console.log(number);
+
+		number++;
+
+		document.getElementById("hNum9").innerHTML = number;
+	}
+	else {
 		console.log("this is not supposed to happen.")
 	}
 }
