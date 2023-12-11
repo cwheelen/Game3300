@@ -21,15 +21,14 @@
     <form class="main-form" action="">
         <input type="text" id="searchBox" name="searchBox" placeholder="Enter a Descriptive Recipe title here!">
     </form>
-    <div class="grid1">
+    <div class="upload-and-ingredients">
         <div class="grid-item-left">
             <div class="graybox">
-                <div class="whitebox">
-                    <img src="upload.jpg" width="60px" height="60px">
+                <div class="upload-icon" style="background-image: url('./upload.jpg')"></div>
+                <div class="upload-container">
+                    <p class="upload-text">Click here to upload a recipe picture!</p>
                 </div>
-                <p class="upload">Click here to upload recipe!</p>
             </div>
-            
         </div>
 
         <div class="grid-item-right">
@@ -60,8 +59,8 @@
             <label for="lactoseFree" onclick="toggleBackground('lactoseFree')">Lactose Free</label>
         </div>
     </div>
-    <br>
-    <div class="description">
+
+    <div class="description-container">
         <h2>Description</h2>
         <div>
             <textarea placeholder="Enter the recipe steps for making this dish" class="txt"></textarea>
